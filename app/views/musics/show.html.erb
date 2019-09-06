@@ -1,0 +1,44 @@
+<div class="tops">
+  <div class="top-left">
+    <!-- video here with the title -->
+    <h3 id="center"> <%=@music.name %> MV</h3>
+      <video loop controls onmouseover="this.play()"  loop id="Video">
+        <source src="https://r1---sn-uxa0n-tm3e.googlevideo.com/videoplayback?expire=1567574683&ei=O_ZuXYmaJtWo7gOYio7ADA&ip=2001%3A1af8%3A4070%3Aa009%3A1%3A%3Affff&id=o-AEXTFIa2Ws21UMdFDW6suuagF4KTJZXM4hkgvyig-x-b&itag=18&source=youtube&requiressl=yes&mime=video%2Fmp4&gir=yes&clen=14497454&ratebypass=yes&dur=254.490&lmt=1540700197248119&fvip=3&c=WEB&txp=5431432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cmime%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=ALgxI2wwRgIhAJV7SYBYOQr9IdoaPLQ5eFbo3xEU2E2c969M3CzS7gl-AiEAqdcDgDMPJoP91dUqr7NNy0uuM_fqgG4o6_89-rXoCLs%3D&title=AJAY+-+Tudishi+%28Dance+Battle+Beat%29&fexp=23812954&redirect_counter=1&rm=sn-4g5e7r7z&req_id=40871b6c4a80a3ee&cms_redirect=yes&ipbypass=yes&mip=207.134.138.186&mm=31&mn=sn-uxa0n-tm3e&ms=au&mt=1567553018&mv=m&mvi=0&pl=21&lsparams=ipbypass,mip,mm,mn,ms,mv,mvi,pl&lsig=AHylml4wRQIhAOy6gXjTSFfTTejvKcUJdqLrDxQpiU3Envm6nuCMeIRBAiBPWsrFqRYwHLxMwulgcvarcEaEKlpGYZ4rOLfUDbtAdg==">
+      </video>
+  </div>
+  <div class="top-right">
+    <!-- artist, comments on the video, desc of the video -->
+    <%= link_to  "/artist", class: "ref" do%>
+      <h3><%=@user.name %></h3>
+    <% end %>
+    <h3>Video Description </h3>
+    <p><%=@music.desc %></p>
+    <p> Comment Feed</p>
+
+  </div>
+</div>
+<div class="col-5 left">
+  <div class="row">
+    <div class="width">
+  <!-- suggest or recommended videos that are related to the video that is being viewed -->
+  <h3> Recommended MV</h3>
+  <div class="card">
+  <% @feedmusics.each do |feedmusic| %>
+  <video loop controls onmouseover="this.play()"  loop id="Video">
+        <source src="https://r3---sn-uxa0n-tm3e.googlevideo.com/videoplayback?expire=1567451054&ei=ThNtXZ2gB4SM1wLRt62AAw&ip=95.211.102.251&id=o-ACv06WryunyqyoXPooMR3E1Ae04EfVKC6fYzgYsHzLXb&itag=18&source=youtube&requiressl=yes&mime=video%2Fmp4&gir=yes&clen=18070731&ratebypass=yes&dur=243.855&lmt=1538099776967502&fvip=2&c=WEB&txp=5531332&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cmime%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=ALgxI2wwRQIhAN-021zgOUrhJIMzlmjAk-HGCVIrCwX-jstqThvXcgyqAiAHN7zVkGXYvzRKOqPwKIeuN5K9k5nlDPNjonXQitvXng==&title=Sean+Paul+%26amp%3B+Major+Lazer+-+Tip+Pon+It&redirect_counter=1&rm=sn-5hneed7l&req_id=57f36eef9378a3ee&cms_redirect=yes&ipbypass=yes&mip=207.134.138.186&mm=31&mn=sn-uxa0n-tm3e&ms=au&mt=1567429315&mv=m&mvi=2&pl=21&lsparams=ipbypass,mip,mm,mn,ms,mv,mvi,pl&lsig=AHylml4wRQIhAPiRtliH7gH7-AJcIgUgjsmoX_GbT8wk_MWQg1CYfv3-AiBjgosSQp1tl1KWvgZuPfIDzqkuDf19UcfcbPbcOUIUvQ==">
+      </video>
+      <!-- a show page for the song -->
+      <%=link_to music_path(@music), class: "ref" do %>
+        <h3><%=feedmusic.name %></h3>
+      <% end %>
+      <p><%=feedmusic.desc%></p>
+      <!-- leads to a profile page where you can donate and subscribe to the artist/user of that account -->
+      <%= link_to  "/artist", class: "ref" do%>
+        <p><%=feedmusic.user.name%></p>
+      <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+</div>

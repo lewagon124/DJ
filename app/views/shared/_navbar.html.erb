@@ -1,0 +1,60 @@
+<div class="navbar navbar-expand-sm sticky-top">
+  <%= link_to musics_path, class: "navbar-brand item" do %>
+    <%= image_tag "logo.png", class: "img" %>
+  <% end %>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- if the user is signed in, this is shown on nav bar-->
+      <% if user_signed_in? %>
+
+        <li class="item">
+          <%= link_to new_music_path do%>
+            <button type="button" class="button upload">Upload</button>
+          <% end %>
+        </li>
+
+        <li class="item">
+          <%= link_to destroy_user_session_path, method: :delete do%>
+            <button type="button" class="button">Sign Out</button>
+          <% end %>
+        </li>
+
+
+        <div action="/search" class="search-box">
+          <input type="text" name="" class="search-txt" placeholder="Type to search"/>
+          <a class="search-btn" href="/search">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+
+
+      <% else %>
+
+        <li class="item">
+          <%= link_to new_user_registration_path do%>
+            <button type="button" class="button">Sign Up</button>
+          <% end %>
+        </li>
+
+        <li class="item">
+          <%= link_to new_user_session_path do%>
+            <button type="button" class="button">Log In</button>
+          <% end %>
+        </li>
+        </div>
+
+        <div action="/search" class="search-box">
+          <input type="text" name="" class="search-txt" placeholder="Type to search"/>
+          <a class="search-btn" href="/search">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+      <% end %>
+
+    </ul>
+  </div>
+</div>
+

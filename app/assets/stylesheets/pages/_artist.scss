@@ -1,0 +1,22 @@
+.top1{
+  display:flex;
+  background-color:#36393E;
+  width:100%;
+  height:65vh;
+  margin-top: 0px;
+  border: 1px solid black;
+  color:white;
+  justify-content:center;
+}
+.top1-right, .top1-left{
+  padding:10px;
+}
+.top1-right button{
+  color:red;
+  background-color:#2f3640;
+  padding: 10px;
+  border-radius:0.4em;
+  display:block;
+  margin-top:15px;
+  width:200px;
+}

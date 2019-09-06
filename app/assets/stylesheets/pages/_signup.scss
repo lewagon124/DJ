@@ -1,0 +1,43 @@
+.signupcon{
+  display:flex;
+  height: 80vh;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+abbr{
+  display:none;
+}
+
+.centered{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  color:black;
+}
+.fa-6x{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  color:black;
+}
+.nounderline:hover{
+  list-style-type: none;
+  text-decoration: none;
+}
+.inner{
+  .email, .password, .passwordconfirm{
+    border-radius: 0.4em;
+  }
+  .signup{
+    border:solid 1px black;
+    padding-left: 235px;
+    padding-right: 235px;
+  }
+}
+#centered{
+  display: flex;
+  justify-content: center;
+}

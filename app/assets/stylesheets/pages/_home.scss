@@ -1,1 +1,78 @@
-// Specific CSS for your home-page
+body{
+  margin:0px;
+  padding:0px;
+  // background-color;
+}
+.top{
+  background-color:#36393E;
+  width:100%;
+  height:40vh;
+  margin-top: 0px;
+  border: 1px solid black;
+  margin-bottom:20px;
+}
+.middle{
+  width:100vw;
+  height: 30vh;
+  display:inline;
+
+  p{
+    display: inline-block;
+    width:33%;
+    height:200px;
+    border: 2px black solid;
+  }
+  li{
+    text-decoration:none;
+    list-style-type: none;
+    display:flex;
+  }
+}
+.bottom{
+  width:100%;
+  height: 30vh;
+  display:block;
+}
+.carousel-inner{
+  display:absolute;
+  text-align:center;
+  margin-top: 10px;
+}
+#feature{
+  text-align:center;
+  margin-right:50px;
+  color:white;
+}
+.width{
+  width:100%;
+  height: 100px;
+  display:block;
+  color:black;
+
+}
+.a:hover{
+  text-decoration:none;
+  color:blue;
+}
+// .row{
+//   display:flex;
+//   justify-content:center;
+// }
+.width{
+  justify-content:center;
+  margin-left: 325px;
+}
+.ref{
+  text-decoration:none;
+  color:black;
+}
+.ref:hover{
+  color:blue;
+  text-decoration:none;
+}
+.button{
+background-color:#6441a5;
+padding:10px;
+border-radius:25px;
+color:white;
+}

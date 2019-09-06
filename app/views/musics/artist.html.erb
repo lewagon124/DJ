@@ -1,0 +1,39 @@
+<div class="top1">
+  <div class="top1-left">
+<!-- artist picture goes here -->
+    <img src="<%=@user.img%>" width="400"height="400">
+  </div>
+  <div class="top1-right">
+    <!-- desc of that artist and donate and subscription here with along with information about the artist such as views, likes, links to social media such as facebook and twitter-->
+    <h3> <%=@user.name %></h3>
+    <h3> Description of the artist</h3>
+    <p> <%=@user.desc %></p>
+    <button>Donate to the Artist</button>
+    <button> Subscribe</button>
+  </div>
+</div>
+<div class= "bottom1">
+<div class="col-5 left">
+  <div class="row">
+    <div class="width">
+  <!-- suggest or recommended videos that are related to the video that is being viewed -->
+  <h3> Recommended MV</h3>
+  <%@musics.each do |music| %>
+  <video loop controls onmouseover="this.play()"  loop id="Video">
+        <source src="https://r3---sn-uxa0n-tm3e.googlevideo.com/videoplayback?expire=1567576480&ei=P_1uXabVOdCF8gOtlJxA&ip=95.211.60.93&id=o-AFBzALDKA7zH6Eq7xGYf_HQSiFDiWnH4m0pUcWQosQDX&itag=18&source=youtube&requiressl=yes&mime=video%2Fmp4&gir=yes&clen=18070731&ratebypass=yes&dur=243.855&lmt=1538099776967502&fvip=2&beids=23806815&c=WEB&txp=5531332&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cmime%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=ALgxI2wwRgIhAI1jS8TXaxaVTmEYX2LuUAJkwBxGc7LrhEH4vSr368viAiEAmW3ldNCdCUbMeo-7p5UXl1Fd3z1VIt-TpqTwk-v5sGw=&title=Sean+Paul+%26amp%3B+Major+Lazer+-+Tip+Pon+It&redirect_counter=1&rm=sn-5hneed7l&fexp=23806815&req_id=1f0d236cd3f3a3ee&cms_redirect=yes&ipbypass=yes&mip=207.134.138.186&mm=31&mn=sn-uxa0n-tm3e&ms=au&mt=1567554762&mv=m&mvi=2&pl=21&lsparams=ipbypass,mip,mm,mn,ms,mv,mvi,pl&lsig=AHylml4wRQIhAPp1srsAWh3KFkEMu3T_NwaxO9LlbD6gyDJ3E-U1v0OrAiBiuTqFafNNcTeHo1kNf_GzOw5-fGNCckgMlMBwsYI6UQ==">
+      </video>
+      <!-- a show page for the song -->
+      <%=link_to music_path(music), class: "ref" do %>
+        <h3><%=music.name %></h3>
+      <% end %>
+      <p><%=music.desc %> </p>
+      <!-- leads to a profile page where you can donate and subscribe to the artist/user of that account -->
+      <%= link_to  "/artist", class: "ref" do%>
+        <p><%=music.user.name %></p>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<%= render 'shared/footer' %>

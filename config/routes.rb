@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :musics
+  devise_for :users
+  root to: 'musics#index'
+  get "/search", to: "musics#search"
+  get "/artist", to: "musics#artist"
+  resources :comments, only: [:create, :destroy]
 end
